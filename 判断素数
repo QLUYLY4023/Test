@@ -1,0 +1,30 @@
+package yly;
+
+import java.util.*;
+public class Test {
+ public static void main(String[] args) {
+  System.out.println("请输入要进行判断的整数：");
+  Scanner sc = new Scanner(System.in);
+  int number = sc.nextInt();
+  System.out.println("您输入的整数是：" + number);
+  if(isPrimeNumber(number)) {
+   System.out.println("您输入的数" + number + "是素数。");
+  } else {
+   System.out.println("您输入的数" + number + "不是是素数。");
+  }
+ }
+ //判断素数的静态方法
+ public static boolean isPrimeNumber(int num) {
+  boolean flag = true;
+  if(num == 2) {
+   return flag;
+  }
+  for(int i = 1; i < Math.sqrt(num); i++) {
+   if(num % 2 == 0) {
+flag = false;
+    break;
+   }
+  }
+  return flag;
+ }
+}
